@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback | StellarBeingCo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+        <a href="index.html">
+        <img src="images/logo.png" alt="StellarBeingsCo logo" class="logo">
+    </a>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Contact Us</a></li>
+        <li><a href="cart.html">My Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Feedback</h2>
+      <form action="#" method="POST">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <input type="submit" value="Send Feedback" class="btn">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StellarBeingCo | Follow us on Instagram @StellarBeingsCo</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    } 
+  </script>
+
+</body>
+</html>

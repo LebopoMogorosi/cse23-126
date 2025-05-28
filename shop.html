@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | StellarBeingCo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+        <a href="index.html">
+        <img src="images/logo.png" alt="StellarBeingsCo logo" class="logo">
+    </a>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Contact Us</a></li>
+        <li><a href="cart.html">My Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="shop">
+    <section class="shop-catalogue">
+      <h2>Our Collection</h2>
+      <div class="catalogue-grid">
+        <div class="catalogue-item">
+          <img src="images/motherearth.jpg" alt="Mother Earth">
+          <h3>Mother Earth</h3>
+          <p>P300.00</p>
+          <button onclick="addToCart('Mother Earth', 300)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+          <img src="images/necklace_amyth.jpg" alt="Lady In The Vine">
+          <h3>Lady In The Vine</h3>
+          <p>P120.00</p>
+          <button onclick="addToCart('Lady In The Vine', 120)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+         <img src="images/necklace_emr.jpg" alt="Golden Glow">
+         <h3>Golden Glow</h3>
+         <p>P100.00</p>
+         <button onclick="addToCart('Golden Glow', 100)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+         <img src="images/necklaceamyth.jpg" alt="Royal Tears">
+         <h3>Royal Tears</h3>
+         <p>P120.00</p>
+         <button onclick="addToCart('Royal Tears', 120)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+          <img src="images/dreamstone.jpg" alt="Dream Wave">
+          <h3>Dream Wave</h3>
+          <p>P85.00</p>
+          <button onclick="addToCart('Dream Wave', 85)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+         <img src="images/forsaken_son.jpg" alt="Forsaken Child">
+         <h3>Forsaken Child</h3>
+         <p>P100.00</p>
+         <button onclick="addToCart('Forsaken Child', 100)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+         <img src="images/blackout_set.jpg" alt="Blackout">
+         <h3>Blackout</h3>
+         <p>P200.00</p>
+         <button onclick="addToCart('Blackout', 200)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+          <img src="images/ringemr.jpg" alt="Majesty">
+          <h3>Majesty</h3>
+          <p>P250.00</p>
+          <button onclick="addToCart('Majesty', 250)">Add to Cart</button>
+        </div>
+        <div class="catalogue-item">
+          <img src="images/ringamyth.jpg" alt="Onajimi">
+          <h3>Onajimi</h3>
+          <p>P200.00</p>
+          <button onclick="addToCart('Onajimi', 200)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StellarBeingCo | Follow us on Instagram @StellarBeingsCo</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    } 
+  </script>
+
+  <script>
+    function addToCart(product, price){
+    let cart =JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({product, price});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(product + "added to cart!");
+    }
+
+  </script>
+</body>
+</html>

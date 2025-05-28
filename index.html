@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StellarBeingsCo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MY HEADER SECTION -->
+      <header>
+    <a href="index.html">
+        <img src="images/logo.png" alt="StellarBeingsCo logo" class="logo">
+    </a>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Contact Us</a></li>
+        <li><a href="cart.html">My Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+     
+     <!-- MY HERO SECTION -->
+      <section class="hero-slider">
+        <div class="slides">
+        <img src="images/forsaken_son.jpg" class="slide active" alt="Banner1">
+        <img src="images/motherearth.jpg" class="slide" alt="Banner2">
+        <img src="images/dreamstone.jpg" class="slide active" alt="Banner3">
+        <img src="images/necklace_emr.jpg" class="slide active" alt="Banner4">
+        </div>
+        <!-- main page banner image is inserted here along with the company slogan-->
+        <div class="hero-text"> 
+        <h2>Shine with ease and confidence</h2>
+         <p>Explore our handcrafted and specially selected collection of natural rock fine jewelry</p>
+         <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+      </section>
+
+      <!-- FEATURED PRODUCTS.-->
+       <!-- In this section I will be displaying the products that will be appearing in the System-->
+        <section class="featured">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- we add images here of the products-->
+                
+                 <div class="product-card">
+                     <img src="images/motherearth.jpg" alt="Mother Earth">
+                     <h3>Mother Earth</h3>
+                     <p>P300.00</p>
+                 </div>
+                 <div class="product-card">
+                     <img src="images/necklace_amyth.jpg" alt="Lady In The Vine">
+                     <h3>Lady In The Vine</h3>
+                     <p>P120.00</p>
+                 </div>
+                 <div class="product-card">
+                     <img src="images/necklace_emr.jpg" alt="Golden Glow">
+                     <h3>Golden Glow</h3>
+                     <p>P100.00</p>
+                 </div>
+                 <div class="product-card">
+                     <img src="images/necklaceamyth.jpg" alt="Royal Tears">
+                     <h3>Royal Tears</h3>
+                     <p>P120.00</p>
+                 </div>
+                 <div class="product-card">
+                     <img src="images/dreamstone.jpg" alt="Dream Wave">
+                     <h3>Dream Wave</h3>
+                     <p>P85.00</p>
+                 </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 StellarBeingCo | Crafted with passion | Follow us on Instagram @StellarBeingsCo</p>
+        </footer>
+
+        <script>
+            //toggle nav for mobile
+            document.querySelector('.menu-toggle').addEventList('click', () => {
+                document.querySelector('.nav-links').classList.toggle('active');
+            });
+        </script>
+
+        <script>
+            // here I am adding setting up the slide show function for the main banner, allowing them to transition from banner image to another
+            let currentSlide = 0;
+            const slides = document.querySelectorAll(".slides");
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    s;ide.classList.remove("active");
+                    if (i == index){
+                        slide.classList.add("active");
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 4000); // this allows for a change in the image every 4 seconds
+        </script>
+
+        <script> // this script is java code for the toggle menu setting.
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+        </script>
+</body>
+</html>

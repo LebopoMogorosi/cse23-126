@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | StellarBeingCo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdjns.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .catalogue-item img {
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .catalogue-item img :hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(red, green, blue, alpha);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+        <a href="index.html">
+        <img src="images/logo.png" alt="StellarBeingsCo logo" class="logo">
+    </a>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Contact Us</a></li>
+        <li><a href="cart.html">My Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="gallery-page">
+    <section class="featured">
+      <h2>Jewelry Gallery</h2>
+      <div class="catalogue-grid">
+          <div class="catalogue-item">
+            <img src="images/blackout_set.jpg" alt="Blackout">
+        </div>
+        <div class="catalogue-item">
+          <img src="images/ringemr.jpg" alt="Majesty">
+        </div>
+        <div class="catalogue-item">
+         <img src="images/ringamyth.jpg" alt="Onajimi">
+         </div>
+         <div class="catalogue-item">
+          <img src="images/forsaken_son.jpg" alt="Forsaken Child">
+        </div>
+         <div class="catalogue-item">
+           <img src="images/dreamstone.jpg" alt="Dream Wave">
+         </div>
+         <div class="catalogue-item">
+           <img src="images/motherearth.jpg" alt="Mother Earth">           
+         </div>
+         <div class="catalogue-item">
+           <img src="images/necklace_amyth.jpg" alt="Lady In The Vine">             
+         </div>
+         <div class="catalogue-item">
+           <img src="images/necklace_emr.jpg" alt="Golden Glow">           
+         </div>
+         <div class="catalogue-item">
+           <img src="images/necklaceamyth.jpg" alt="Royal Tears">
+         </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded View">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 StellarBeingCo | Follow us on Instagram @StellarBeingsCo</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

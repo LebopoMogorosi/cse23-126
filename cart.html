@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart | StellarBeingCo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+     <a href="index.html">
+        <img src="images/logo.png" alt="StellarBeingsCo logo" class="logo">
+    </a>
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="feedback.html">Contact Us</a></li>
+      <li><a href="cart.html">My Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="cart">
+  <h2>My Cart</h2>
+  <div id="cart-items"></div>
+  <h3>Total: P<span id="total-price">0</span></h3>
+  <button onclick="checkout()">Place Order</button>
+</main>
+
+<footer>
+  <p>&copy; 2025 StellarBeingCo | Follow us on Instagram @StellarBeingsCo</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    } 
+  </script>
+
+<script>
+  function loadCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItems = document.getElementById("cart-items");
+    const totalPrice = document.getElementById("total-price");
+
+    let total = 0;
+    cartItems.innerHTML = "";
+    cart.forEach((item, index) => {
+      total += item.price;
+      cartItems.innerHTML += `
+        <div>
+          ${item.product} - P${item.price} 
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
+
+    totalPrice.textContent = total;
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
+  function checkout() {
+    alert("Thank you for your order!");
+    localStorage.removeItem("cart");
+    loadCart();
+  }
+
+  loadCart();
+</script>
+
+</body>
+</html>
