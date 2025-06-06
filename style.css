@@ -10,9 +10,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-main {
-  flex: 1; /*pushes footer to the bottom*/
-
 header {
   background-color: #222;
   color: #fff;
