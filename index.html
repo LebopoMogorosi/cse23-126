@@ -36,7 +36,7 @@
         <!-- main page banner image is inserted here along with the company slogan-->
         <div class="hero-text"> 
         <h2>Shine with ease and confidence</h2>
-         <p>Explore our handcrafted and specially selected collection of natural gemstone and fine jewelry</p>
+         <p>Explore our handcrafted and specially selected collection of natural rock fine jewelry</p>
          <a href="shop.html" class="btn">Shop Now</a>
         </div>
       </section>
@@ -94,7 +94,7 @@
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
-                    slide.classList.remove("active");
+                    s;ide.classList.remove("active");
                     if (i == index){
                         slide.classList.add("active");
                     }
@@ -102,11 +102,9 @@
             }
 
             function nextSlide() {
-		    if (slides.length > 0) {
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             }
-	    }
 
             setInterval(nextSlide, 4000); // this allows for a change in the image every 4 seconds
         </script>
