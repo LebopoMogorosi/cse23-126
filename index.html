@@ -109,9 +109,11 @@
             }
 
             function nextSlide() {
+		    if (slides.length > 0) {
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             }
+	    }
 
             setInterval(nextSlide, 4000); // this allows for a change in the image every 4 seconds
         </script>
